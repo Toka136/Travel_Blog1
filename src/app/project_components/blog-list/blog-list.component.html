@@ -1,0 +1,252 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelers</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section class="banner">
+           
+            <!-- banner body -->
+            <div class="banner_body">
+                    <h1 class="banner_title">NEVER STOP EXPLORING</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
+                    <a >
+                        <button class="banner_body_btn" (click)="gotoblog()">Our Blogs</button>
+                    </a>
+                    </div>
+    </section>            
+    <section class="images">
+        <div class="image-container">
+            <span class="caption">Write Down Your Experience</span>
+            <img src="img_2.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <span class="caption">Write Down Your Experience</span>
+            <img src="/img_1.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <span class      ="caption">Write Down Your Experience</span>
+            <img src="img_3.jpg" alt="">
+        </div>
+    </section>
+    <section class="text_icons">
+        <ul>
+            <li>
+                <i class="fa fa-fighter-jet" aria-hidden="true"></i>
+                <div>
+                    <span>Air Ticketing</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                    <a href="">Learn More</a>
+                </div>
+            </li>
+            <li>
+                <i class="fa fa-ship" aria-hidden="true"></i>
+                <div>
+                    <span>Cruises</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                    <a href="">Learn More</a>
+                </div>
+            </li>
+            <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <div>
+                    <span>Tour Packages</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                    <a href="">Learn More</a>
+                </div>
+            </li>
+        </ul>
+    </section>    
+    
+  
+    <section class="des_title">
+      <h1>Our Destinations</h1>
+      <span>Choose Your Next Destination</span>
+  </section>
+    <section class="Our_Destinations">
+        <div class="des_image-container">
+            <p class="des_price">$520</p>
+            <span class="des_caption">Santorini,Greece</span>
+            <img src="01-greece.jpg" alt="">
+        </div>
+        <div class="des_image-container">
+            <p class="des_price">$390</p>
+            <span class="des_caption">Roma,Italy</span>
+            <img src="02-rome.jpg" alt="">
+        </div>
+        <div class="des_image-container">
+            <p class="des_price">$390</p>
+            <span class="des_caption">Mount Fuji, Japan</span>
+            <img src="03-japan.jpg" alt="">
+        </div>
+        <div class="des_image-container">
+            <p class="des_price">$320</p>
+            <span class="des_caption">Camels, Dubai</span>
+            <img src="/04-dubai.jpg" alt="">
+        </div>
+        <div class="des_image-container">
+            <p class="des_price">$290</p>
+            <span class="des_caption">Elizabeth Tower, London</span>
+            <img src="/05-london.jpg" alt="">
+        </div>
+        <div class="des_image-container">
+            <p class="des_price">$390</p>
+            <span class="des_caption">Opera House, Australia</span>
+            <img src="/06-australia.jpg" alt="">
+        </div>
+    </section> 
+    <section class="des_title">
+      <h1>Our Blog Posts</h1>
+      
+  </section>  
+     <div class="blogsection" id ="blog">
+      <div class="blog-container">
+        <div class="up-div">
+          
+          <div class="searchdiv">
+            <form action="">
+              <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input #value_serach type="text" name="search" placeholder="search">
+              </div>
+              <input  type="submit" name="send" id="" value="search" (click)="search(value_serach.value)">
+            </form>
+          </div>
+        
+        </div>
+        <div class="filter">
+          <select class="form-select" aria-label="Default select example" [(ngModel)]="cat">
+            <option value="0">Filter By</option>
+            @for (sele of CategoryList; track sele) {
+              <option  [value]="sele.id">
+                {{sele.name}}
+              </option>
+            }
+    
+          </select>
+        </div>
+        <div class="blog-list">
+          @for (item of BlogList; track item) {
+    <div class="card" [class.hidden]="(item.CategoryID!=cat&&cat!=0)||
+         (!item.comment.toLowerCase().includes(searchvalue.toLowerCase())) && searchvalue!='none' 
+         && ((!item.title.toLowerCase().includes(searchvalue.toLowerCase()))  && searchvalue!='none')">
+              <div class="img"><img [src]="item.imgurl" alt=""></div>
+              <div class="card-body">
+                <h3 class="card-title">{{item.title}}</h3>
+                <div class="info">
+                  <h5 class="card-title"> by {{item.name}}</h5>
+                  <p>{{item.date}}</p>
+                </div>
+    
+                <p class="card-text">{{item.more==="1"?littleText(item.comment) : item.comment}}</p>
+                <button class="show-text" (click)="item.more=togglebutton(item.more)" [class.hidden]="item.more==='0'" >{{ item.more==="1"? "Read More" : "Read Less" }}</button>
+              </div>
+            </div>
+          }
+        </div>
+        <div class="add">
+          <div class="button-show">
+            <button (click)="showaddblog()">Add Blog</button>
+          </div>
+          <div class="blog">
+            <form action="" class="blogform hidden">
+              <div class="form ">
+                <input #img type="text" placeholder="Img URL" name="img">
+                <input #title type="text" placeholder="title" name="title">
+                <input #name type="text" placeholder="name" name="name">
+                <input #comment type="text" placeholder="comment" name="comment">
+                <div class="filter">
+                  <select class="form-select" aria-label="Default select example" [(ngModel)]="cat_blog" name="selectcat">
+                    <option value="0" selected>Category</option>
+                    @for (sele of CategoryList; track sele) {
+                      <option  [value]="sele.id">
+                        {{sele.name}}
+                      </option>
+                    }
+    
+                  </select>
+                </div>
+              </div>
+              <div class="button-show">
+                <input type="submit" value="post blog" (click)="addblog(img.value,title.value,name.value,comment.value)">
+              </div>
+            </form>
+          </div>
+    
+        </div>
+      </div>
+    </div>  
+    <footer>
+        <div class="footer1">
+            <span>About Travelers</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+        </div>
+        <div class="footer2">
+            <span>Navigations</span>
+            <div>
+                <a href="">Home</a>
+                <a href="">BLOG</a>
+                <a href="">PROFILE</a>
+                <a href="">LOG OUT</a>
+            </div>
+        </div>
+        <div class="footer2">
+            <span>Our Team</span>
+            <div>
+                <a href="">Nancy Adel</a>
+                <a href="">Toka Karam</a>
+                <a href="">Jana Mohamed</a>
+                <a href="">marwan Ahmed</a>
+                <a href="">Mina Adly</a>
+                <a href="">Rodina Yehia</a>
+                <a href="">Sara Elysha</a>
+
+            </div>
+        </div>
+        <div class="footer3">
+            <span>Subscribe Newslettere</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
+            <div>
+                <input type="email" placeholder="Enter Email" required>
+                <a href="">
+                    <button>Send</button>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <section class="end">
+        <div class="end_icons">
+            <a href="">
+                <i class="fa-brands fa-tripadvisor"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <span>
+            Copyright ©2024 All rights reserved | This project is supervised by Professor <a href="" class="highlight">Our Team.</a>
+        </span>
+    </section>
+     <!-- js -->
+     <!-- <script src="./js/script.js"></script> -->
+
+</body>
+</html>
+
+
+
+
+
+<!-- ======================================================================================================== -->
+

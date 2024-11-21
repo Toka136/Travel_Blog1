@@ -1,0 +1,116 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #343a40; /* Dark gray text color */
+}
+
+.main-header {
+    /* margin-bottom: 20px; */
+    background-color: white !important;
+    color: black !important; /* Primary color for the header */ 
+ }
+ .navbar-expand-lg .navbar-nav .nav-link
+ {
+    color: black;
+ }
+
+.navbar-brand
+{
+    width:20%;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+}
+.btn-outline-light 
+{
+     background-color:#ef6c57; ;
+    color: white !important;
+    padding: 10px 35px;
+    border: 1px solid #ef6c57 ;
+    transition: .3s;
+}
+.btn-outline-light:hover
+{
+    background-color: white;
+    color: #ef6c57 !important;
+}
+.navbar
+{
+    justify-content: space-around !important;
+    width: 100% !important;
+    padding: 5px 20px !important;
+    margin: 0 !important;
+}
+.navbar-nav
+{
+    margin: 0 !important;
+    width: 50% !important;
+    display: flex !important;
+    justify-content: space-around !important;
+}
+.navbar-expand-lg .navbar-collapse
+{
+    justify-content: space-around;
+}
+.form-control 
+{
+    border: 1px solid #ef6c57;
+}
+@media(max-width:900px)
+{
+    .form-control {
+    /* width: 40%; */
+    margin-bottom: 10px;
+    }
+    .navbar-collapse 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link
+    {
+        text-align: center;
+    }
+    .navbar-nav .dropdown-menu
+    {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+}
+@media(max-width:767px)
+{
+    .navbar-brand
+    {
+font-size: 30px;
+    }
+}
+@media(max-width:424px)
+{
+    .navbar-brand
+    {
+    font-size: 20px;
+    }
+}
+.nav-link.active {
+    text-decoration: underline !important;
+    text-underline-offset: 10px !important;
+    color: #ef6c57 !important;/* White color for active nav link */
+    cursor: pointer;
+}
+.hidden
+{
+    display: none;
+}
+button:not(:disabled)
+{
+    background-color: black;
+}
+.bg-dark
+{
+    background-color: white !important;
+    justify-content: space-between !important;
+}

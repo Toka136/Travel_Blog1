@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up (2)</title>
+    <!-- <link rel="stylesheet" href="./main.css"> -->
+</head>
+<body>
+    <!-- Both Side -->
+    <div class="background">
+        <!-- Right side -->
+        <div class="right_side">
+          <div class="gallery" id="jk">
+            <img src="/R1.jpeg" alt="">
+            <img src="/R2.jpeg" alt="">
+            <img src="/R3.jpeg" alt="">
+            <img src="/R4.jpeg" alt="">
+          </div>
+        </div> 
+        <!-- Left Side -->
+        <div class="left_side">  	
+          <input type="checkbox" id="chk" aria-hidden="true">
+      
+            <div class="signup">
+              <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="txt" placeholder="Name" required=""  [(ngModel)]="name">
+                <input type="text" name="txt" placeholder="User name" required="">
+                <input type="email" name="email" placeholder="Email" required=""  [(ngModel)]="email">
+                <input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="password">
+                <div class="checkterms">
+                  <input class="checkbox" type="checkbox">
+                  <p class="terms">I agree to the Terms & Conditions</p>
+                </div>
+                <button (click)="valid()">Sign up</button>
+              </form>
+            </div>
+      
+            <div class="login">
+              <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" required=""[(ngModel)]="logemail" >
+                <input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="logpassword" >
+                <p [(ngModel)]="error" class="error">{{error}}</p>
+                <a  (click)="goToMainPage()" >Login</a> 
+              </form>
+            </div>
+        </div>  
+      </div> 
+
+</body>
+</html>
+

@@ -1,0 +1,259 @@
+* { 
+	margin: 0;
+    padding: 0;
+	box-sizing: border-box; 
+}
+
+html, body {
+	font-family: 'Jost', sans-serif;
+	/* height: 100%; */
+}
+body {
+	background: linear-gradient(rgba(26, 26, 26, 0.2), rgba(26, 26, 26, 0.4)), url('/Background.jpeg') no-repeat;
+	/* background-color: #F2F2F2; */
+	/* background-color: #ca6660; */
+	background-position: center center;
+	background-size: cover;
+	font-size: 16px;
+	margin: 0;
+}
+.background {
+	display: flex;
+	height: 100vh;
+	padding: 45px 25px;
+	position: relative;
+	margin: 0 auto;
+	/* max-width: 1200px; */
+}
+
+/* Right_side */
+.right_side {
+	background-size: cover;
+	border-radius: 10px 0 0 10px;
+	flex-basis: 50%;
+	/* height: 100%; */
+	position: relative;
+}
+
+.gallery {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-top-left-radius: 7%;
+	border-bottom-left-radius: 7%;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.gallery img {
+	display: none;  
+}
+
+.gallery img:first-child {
+	display: block;  
+}
+
+
+/* left_Side - Form and input styling  */
+.left_side{
+	width: 40%;
+	height: 100%;
+	overflow: hidden;
+	background-color: white;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	/* box-shadow: 5px 20px 50px #000; */
+}
+
+#chk {
+	display: none;
+}
+
+.signup {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+label {
+	color: #e73115;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 50px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+input {
+	width: 60%;
+	height: 10px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 12px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+.checkbox {
+	border-style: none;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
+
+.terms {
+	font-size: 14px;
+	font-weight: 500;
+	display: inline-block;
+}
+
+.checkterms {
+	margin-top: -30px;
+	margin-left: 40px;
+}
+form a
+{
+	display: flex !important;
+    align-items: center;
+    width: 40% !important;
+	font-weight: 600;
+}
+button,
+form a {
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: white;
+	background: #e73115;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 30px;
+	outline: none;
+	border: 2px solid #e73115 ;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+form a:hover
+{
+	background: none;
+	border-color: #e73115;
+	color: white;
+}
+button:hover {
+	background: #ef6c57;
+}
+
+.login {
+	height: 460px;
+	background: #ef6c57;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+
+.login label {
+	color: white;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login {
+	transform: translateY(-650px);
+}
+
+#chk:checked ~ .login label {
+	transform: scale(1);	
+}
+
+#chk:checked ~ .signup label {
+	transform: scale(.6);
+}
+
+
+
+
+.block
+{
+	display :block !important;
+}
+.none
+{
+	display: none !important;
+}
+.active
+{
+	background-color: #ef6c57;
+}
+.error
+{
+	text-align: center;
+	text-transform: capitalize;
+	font-size: 25px;
+	color: white;
+}
+@media screen and (max-width: 687px) {
+	.background {
+		max-width: 500px;
+	}
+
+	/* hide quote */
+	.right_side {
+		display: none;
+	}
+
+	/* Form b.background */
+	.left_Side {
+		background: rgba(255, 255, 255, 0.7);
+		border-radius: 10px;
+		flex-basis: 500px;
+		margin: 0 auto;
+	}
+
+	.left_Side {
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 648px) {
+	.background {
+		padding-left: 0;
+		padding-right: 0;
+		/* background: linear-gradient(rgba(26, 26, 26, 0.2), rgba(26, 26, 26, 0.4)), url('./images/8.jpeg') no-repeat; */
+	}
+
+	.left_side[_ngcontent-ng-c2071309108] {
+		border-radius: 0;
+		flex-basis: 1;
+		width: 80%;
+		margin-left: 10%;
+	}
+}
+@media screen and (max-width: 424px) 
+{
+	.left_side[_ngcontent-ng-c2071309108] {
+		
+		width: 90%;
+		margin-left: 5%;
+	}
+}
+
+@media screen and (max-height: 500px) {
+	.background {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+}
